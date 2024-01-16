@@ -1,0 +1,23 @@
+<!-- petition.component.html -->
+<div class="petition-container" *ngIf="isPetitionVisible">
+    <form [formGroup]="petitionForm" class="petition-form"
+        [ngClass]="{ 'error': petitionForm.controls['message'].invalid && petitionForm.controls['message'].touched }">
+        <div>
+            <label for="message">Mensaje:</label>
+            <div>
+                <textarea id="message" formControlName="message"></textarea>
+                <div *ngIf="petitionFormControls['message'].hasError('required') && petitionFormControls['message'].touched"
+                    class="error-message">
+                    El mensaje es obligatorio.
+                </div>
+            </div>
+        </div>
+        <div>
+            <button type="button" (click)="setCreationDate()" class="gray-button">Establecer Fecha</button>
+            <button type="button" (click)="submitPetition()" class="blue-button">Enviar Petición</button>
+        </div>
+        <div *ngIf="showConfirmation" class="confirmation-message">
+            ¡La petición ha sido enviada con éxito!
+        </div>
+    </form>
+</div>

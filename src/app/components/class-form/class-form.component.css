@@ -1,0 +1,60 @@
+/* Fondo de color negro claro apagado */
+.container form {
+  background-color: #012840;
+  padding: 15px; /* Reducir el padding */
+  font-family: 'Roboto', sans-serif;
+  border-radius: 40px; /* Reducir el border-radius */
+  max-width: 80%; /* Limitar el ancho del formulario */
+  margin: auto; /* Centrar el formulario en la página */
+}
+
+.container form input,
+.container form textarea,
+.container form select {
+  color: rgb(0, 0, 0); 
+  font-size: 18px; /* Reducir el tamaño de la fuente */
+}
+
+/* Estilo para todos los elementos dentro del formulario */
+.container form * {
+  box-shadow: 2px 2px 5px rgba(101, 83, 83, 0.1);
+}
+
+/* Estilo para los elementos del formulario */
+.container form div {
+  margin-bottom: 8px; /* Reducir el margen inferior */
+}
+
+/* Estilo para el contenedor de los botones */
+.button-container {
+  text-align: center;
+  margin-top: 15px; /* Añadir margen superior */
+}
+
+/* Estilo para los botones cilíndricos */
+.btn-primary {
+  border-radius: 24px; /* Reducir el border-radius */
+}
+
+.btn-secondary {
+  /* Estilos para el botón de cerrar */
+  background-color: #6c757d;
+  color: #fff;
+  border: 1px solid #6c757d;
+  margin-left: 8px; /* Reducir el margen izquierdo */
+  border-radius: 20px;
+  
+}
+
+.btn-secondary:hover {
+  /* Estilos para el botón de cerrar al pasar el ratón sobre él */
+  background-color: #495057;
+  color: #fff;
+  border: 1px solid #495057;
+}
+
+.form-group {
+  color: white;
+  font-size: 24px; /* Reducir el tamaño de la fuente */
+ 
+}

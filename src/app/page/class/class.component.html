@@ -1,0 +1,17 @@
+
+<div class="background-container">
+    <div class="info-container">
+        <h1>Profesores de todos los tipos para ayudarte a mejorar a toda velocidad</h1>
+        <p>Descubre la excelencia con tu profesor más adecuado.</p>
+    </div>
+    <br>
+
+
+    <!-- Iterar sobre el array de clases y mostrar las tarjetas en filas de 4 -->
+    
+    <div class="row class-card-container justify-content-md-center justify-content-sm-end">
+        <div *ngFor="let classData of classes" class="col-md-3 mb-4">
+            <app-class-card-component [classData]="classData"></app-class-card-component>
+        </div>
+    </div>
+</div>

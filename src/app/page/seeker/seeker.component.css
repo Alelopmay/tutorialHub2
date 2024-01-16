@@ -1,0 +1,103 @@
+
+/* styles.css */
+
+@import 'https://unpkg.com/leaflet@1.7.1/dist/leaflet.css';
+
+.background-container {
+  background-image: url(https://wallpapers.com/images/hd/glowing-blue-light-hexagon-in-black-tyk6qvhbjwzgkuf1.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  overflow-y: auto;
+}
+hr {
+  border: 10px; /* Eliminamos el borde predeterminado */
+  border-top: 5px solid rgb(255, 255, 255); /* Añadimos un borde superior de 1px con color blanco */
+  width: 100%; /* Establecemos el ancho al 25% del contenedor padre */
+}
+
+
+.title {
+  color: #11A0D9;
+  text-align: center;
+  border: 2px solid #11A0D9;
+  border-radius: 12px;
+  margin-bottom: 4%;
+
+}
+
+.seeker-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 20px;
+}
+
+.form-container {
+  background-color: rgba(18, 13, 13, 0.822);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(230, 226, 226, 0.5);
+  margin-bottom: 20px;
+  width: calc(30% - 10px);
+  box-sizing: border-box;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+label {
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  background-color: transparent;
+  color: #ffffff;
+}
+
+button {
+  width: 30%;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #11A0D9;
+}
+
+.map-container {
+  width: 60%;
+  height: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 10px;
+  margin-right:80px;
+  
+}
+
+
+/* Consulta de medios para dispositivos móviles */
+@media only screen and (max-width: 767px) {
+  .seeker-container {
+    flex-direction: column; /* Cambia la dirección del eje principal a columna en dispositivos móviles */
+  }
+
+  .form-container {
+    width: 100%; /* Ocupa el 100% del ancho en dispositivos móviles */
+  }
+
+  .map-container {
+    margin-top: 0; /* Elimina el margen superior en dispositivos móviles */
+     width: 100%;
+     
+  }
+
+}

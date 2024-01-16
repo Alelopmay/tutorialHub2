@@ -1,0 +1,40 @@
+<!-- seeker.component.html -->
+
+<div class="background-container">
+  <div class="seeker-container">
+    <div class="form-container">
+      <div class="title">
+        <h2>Buscar clases</h2>
+      </div>
+      <form><hr>
+        <div class="form-group">
+          <label for="categoria">Categoría:</label>
+          <input type="text" class="form-control" id="categoria" name="categoria">
+        </div>
+
+        <div class="form-group">
+          <label for="codigoPostal">Código Postal:</label>
+          <input type="text" class="form-control" id="codigoPostal" name="codigoPostal">
+        </div>
+
+        <div class="form-group">
+          <label for="localidad">Localidad:</label>
+          <input type="text" class="form-control" id="localidad" name="localidad">
+        </div>
+
+        <div class="form-group">
+          <label for="provincia">Provincia:</label>
+          <input type="text" class="form-control" id="provincia" name="provincia">
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt"
+            viewBox="0 0 16 16">
+            <!-- ... (icono del botón) ... -->
+          </svg>Buscar 
+        </button>
+      </form>
+    </div>
+  <div class="map-container" id="map" ></div>
+  </div>
+</div>

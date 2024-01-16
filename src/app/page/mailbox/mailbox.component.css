@@ -1,0 +1,29 @@
+.mailbox-container {
+  background-image: url(https://wallpapers.com/images/hd/glowing-blue-light-hexagon-in-black-tyk6qvhbjwzgkuf1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.mailbox-title {
+  color: #ffffff;
+  font-size: 24px;
+  margin: 0;
+  margin-bottom: 20px;
+  background-color: #4a90e2;
+  padding: 10px; /* Añade padding al título */
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+.mailbox-info {
+  color: #ffffff;
+  font-size: 16px;
+  margin-top: 20px;
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}

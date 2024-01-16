@@ -1,0 +1,86 @@
+.background-container {
+    background-image: url(https://wallpapers.com/images/hd/glowing-blue-light-hexagon-in-black-tyk6qvhbjwzgkuf1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.button-container {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    margin-top: 20px;
+}
+
+.rounded-button {
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #2c7d11;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.rounded-button:hover {
+    background-color: #0056b3;
+}
+
+.row.class-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 3%;
+    margin-right: 3%;
+    position: relative;
+    z-index: 1;
+}
+
+.col-md-3.mb-4 {
+    flex: 0 0 calc(25% - 2.25%);
+    margin-bottom: 20px;
+}
+
+/* Ajuste para dispositivos pequeños (menos de 576px de ancho) */
+@media (max-width: 575.98px) {
+    .row.class-card-container {
+        margin-left: 0;
+        margin-right: 0;
+        justify-content: center;
+    }
+}
+
+/* Ajuste para tablets (entre 576px y 767.98px de ancho) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .row.class-card-container {
+        margin-left: 3%;
+        margin-right: 3%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .col-md-3.mb-4 {
+        flex: 0 0 calc(50% - 2.25%);
+        margin-bottom: 20px;
+    }
+}
+
+/* Ajuste para pantallas más grandes, como el tamaño de la computadora */
+@media (min-width: 768px) {
+    .row.class-card-container {
+        margin-left: 3%;
+        justify-content: center;
+    }
+
+    .col-md-3.mb-4 {
+        flex: 0 0 calc(25% - 2.25%);
+        margin-bottom: 20px;
+    }
+}

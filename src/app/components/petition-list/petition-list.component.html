@@ -1,0 +1,15 @@
+<!-- petition-list.component.html -->
+<div *ngFor="let petition of petitions" class="petition-item"
+    [style.backgroundColor]="petition.state ? 'lightgreen' : (petition.state === false ? 'lightcoral' : 'white')">
+    <h3>Petición de unirse a la clase del usuario:</h3>
+    <p>Mensaje: {{ petition.message }}</p>
+    <p>Estado: {{ petition.state ? 'Aprobada' : (petition.state === false ? 'Denegada' : 'Pendiente') }}</p>
+    <p *ngIf="petition.classInfo && petition.classInfo.length > 0">
+        Descripción de la clase: {{ petition.classInfo[0] }}
+        Tipo de clase: {{ petition.classInfo[1] }}
+        Categoría de clase: {{ petition.classInfo[2] }}
+    </p>
+    <button *ngIf="!petition.state" (click)="acceptPetition(petition)" class="btn btn-success">Aceptar</button>
+    <button *ngIf="!petition.state" (click)="denyPetition(petition)" class="btn btn-danger">Denegar</button>
+    <hr>
+</div>

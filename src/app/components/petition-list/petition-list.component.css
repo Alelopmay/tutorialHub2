@@ -1,0 +1,10 @@
+.petition-item {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  color: rgb(0, 0, 0); 
+  background-color: white;
+  width: 80%;
+  margin-left: 10%;
+}
