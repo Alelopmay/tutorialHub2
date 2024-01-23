@@ -1,3 +1,4 @@
+// petition.component.ts
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Petition } from '../../model/petition';
@@ -46,7 +47,8 @@ export class PetitionComponent {
         date: this.petitionForm.value.date,
         userId: this.petitionForm.value.userId,
         classId: this.petitionForm.value.classroomId,
-        classInfo: []
+        classInfo: [],
+        expanded: false  // Asegúrate de agregar la propiedad 'expanded'
       };
 
       this.petitionService.addPetition(newPetition).subscribe(() => {
@@ -55,5 +57,9 @@ export class PetitionComponent {
         // Puedes realizar otras acciones después de enviar la petición
       });
     }
+  }
+
+  toggleExpanded(petition: Petition): void {
+    petition.expanded = !petition.expanded;
   }
 }

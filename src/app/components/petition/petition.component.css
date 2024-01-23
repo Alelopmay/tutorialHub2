@@ -1,43 +1,48 @@
-/* petition.component.css */
 .petition-container {
-    border: 2px solid rgb(23, 11, 200);
-    padding: 10px;
-    margin: 10px;
+  border: 2px solid rgb(23, 11, 200);
+  padding: 20px; /* Aumenta el relleno para un aspecto más elegante */
+  margin: 20px; /* Aumenta el margen para separar visualmente de otros elementos */
+  border-radius: 10px;
 }
 
 .petition-form {
-    display: grid;
-    gap: 10px;
+  display: grid;
+  gap: 20px; /* Aumenta el espacio entre los elementos del formulario */
 }
 
 .error {
-    border: 2px solid red;
+  border: 2px solid red;
 }
+
 button {
-  margin-right: 10px; /* Ajusta el margen entre los botones según sea necesario */
-  padding: 10px; /* Ajusta el relleno de los botones según sea necesario */
+  padding: 15px 20px; /* Aumenta el relleno para un aspecto más equilibrado */
   cursor: pointer;
   border-radius: 50px;
 }
 
 button.gray-button {
-  background-color: #ccc; /* Color gris para el botón de fecha */
-  color: #fff; /* Texto blanco para el botón de fecha */
+  background-color: #ccc;
+  color: #fff;
 }
 
 button.blue-button {
-  background-color: #007bff; /* Color azul para el botón de enviar */
-  color: #fff; /* Texto blanco para el botón de enviar */
+  background-color: #007bff;
+  color: #fff;
 }
+
 .error-message {
-  color: red; /* Color rojo para el mensaje de error */
-  margin-top: 2px; /* Espacio superior para separar el mensaje de error del textarea */
+  color: red;
+  margin-top: 5px; /* Espaciado superior más pequeño para el mensaje de error */
 }
+
 textarea {
   width: 100%;
+  padding: 10px;
+  border-radius: 5px;
 }
+
 .confirmation-message {
-  margin-top: 10px; /* Añade un margen superior para separar el mensaje de los botones */
-  color: green; /* Cambia el color del mensaje de confirmación a verde (puedes ajustar según tu preferencia) */
-  font-weight: bold; /* Hace que el texto sea más destacado */
+  margin-top: 15px; /* Aumenta el margen superior para separar el mensaje de los botones */
+  color: green;
+  font-weight: bold;
 }

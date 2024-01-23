@@ -37,4 +37,12 @@
     </div>
   <div class="map-container" id="map" ></div>
   </div>
+    <div class="class-card-container">
+      <div class="row justify-content-md-center justify-content-sm-end">
+        <!-- Itera sobre el arreglo classes y muestra las app-class-card-component -->
+        <div *ngFor="let classData of classes" class="col-md-3 mb-4">
+          <app-class-card-component [classData]="classData"></app-class-card-component>
+        </div>
+      </div>
+    </div>
 </div>

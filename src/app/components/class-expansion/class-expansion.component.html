@@ -1,0 +1,38 @@
+<!-- class-expansion.component.html -->
+<div class="popup">
+    <div class="popup-content">
+        <div class="expanded-content">
+            <div class="description-container">
+                <h3>Información acerca de la clase</h3>
+                <div class="scrollable-content">
+                    <h5>{{ classData.description || 'Nombre de la Clase' }}</h5>
+                    <p>{{ truncateText(classData.description, 40) || 'Descripción no disponible' }}</p>
+                </div>
+                <hr>
+            </div>
+
+            <div class="map-and-info-container">
+                <!-- Información adicional -->
+                <div class="additional-info">
+                    <h3>Información adicional</h3>
+                    <h4><strong>Categoría:</strong> {{ classData.category || 'No especificada' }}</h4>
+                    <h4><strong>Tipo:</strong> {{ classData.type || 'No especificado' }}</h4>
+                    <h4><strong>Dirección:</strong> {{ classData.direction || 'No especificada' }}</h4>
+                    <h4><strong>Código Postal:</strong> {{ classData.postalCode || 'No especificado' }}</h4>
+                    <h4><strong>Provincia:</strong> {{ classData.province || 'No especificada' }}</h4>
+                    <h4><strong>Duración:</strong> {{ classData.duration || 'No especificada' }}h</h4>
+                    <h4><strong>Localidad:</strong> {{ classData.localidad || 'No especificada' }}</h4>
+                    <hr>
+                </div>
+
+                
+                <div class="map-container" id="map"></div>
+            </div>
+            <h3>envie su peticion para unise a la clase aquí</h3>
+            <app-petition></app-petition>
+
+            <!-- Botón para cerrar la expansión -->
+            <button class="btn btn-secondary" (click)="closePopup()">Cerrar</button>
+        </div>
+    </div>
+</div>

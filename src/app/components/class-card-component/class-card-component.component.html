@@ -1,58 +1,21 @@
-<!-- class-card-component.component.html -->
 <div class="card" style="width: 18rem;" (click)="expandCard()">
-    <img src="/foto/logo1.png" class="card-img-top" alt="Class Image">
+    <img src="/assets/foto/logo.png" class="card-img-top" alt="Class Image">
     <div class="card-body">
         <h5 class="card-title">{{ truncateText(classData.description, 40) || 'Nombre de la Clase' }}</h5>
-        <p class="card-text">Tipo:{{ truncateText(classData.type, 40) || 'No especificado' }}</p>
-        <p class="card-text">Duración:{{ truncateText(classData.duration, 40) || 'No especificada' }}</p>
-        <p class="card-text"> Descripcion:{{truncateText(classData.description, 40) || 'Descripción no disponible' }}
+        <p class="card-text">Tipo: {{ truncateText(classData.type, 40) || 'No especificado' }}</p>
+        <p class="card-text">Duración: {{ truncateText(classData.duration, 40) || 'No especificada' }}</p>
+        <p class="card-text"> Descripcion: {{ truncateText(classData.description, 40) || 'Descripción no disponible' }}
         </p>
         <div class="d-flex justify-content-between mt-3">
-            <!-- Botones de Eliminar y Modificar en la forma pequeña -->
             <div class="button-container-small">
                 <button class="btn btn-danger" (click)="confirmDelete()">Eliminar</button>
                 <button class="btn btn-primary" (click)="editClass()">Modificar</button>
             </div>
-            
         </div>
     </div>
 </div>
 
-<!-- Ventana emergente para la información completa -->
-<div *ngIf="isExpanded" class="popup">
-    <div class="popup-content" #expandedContent>
-        <div class="expanded-content">
-            <div class="description-container">
-                <h3>Información acerca de la clase</h3>
-                <div class="scrollable-content">
-                    <h5>{{ classData.description || 'Nombre de la Clase' }}</h5>
-                    <p>{{ truncateText(classData.description, 40) || 'Descripción no disponible' }}</p>
-                </div>
-            </div>
-            <div class="additional-info">
-                <h3>Información adicional</h3>
-                <h4><strong>Tipo:</strong> {{ classData.type || 'No especificado' }}</h4>
-                <h4><strong>Categoría:</strong> {{ classData.category || 'No especificada' }}</h4>
-                <h4><strong>Dirección:</strong> {{ classData.direction || 'No especificada' }}</h4>
-                <h4><strong>Código Postal:</strong> {{ classData.postalCode || 'No especificado' }}</h4>
-                <h4><strong>Provincia:</strong> {{ classData.province || 'No especificada' }}</h4>
-                <h4><strong>Duración:</strong> {{ classData.duration || 'No especificada' }}</h4>
-                <h4><strong>Localidad:</strong> {{ classData.localidad || 'No especificada' }}</h4>
-                <h4><strong>Localidad:</strong> {{ classData.id || 'No especificada' }}</h4>
-                <hr>
-                <app-petition *ngIf="isPetitionVisible"></app-petition>
-            </div>
-            <!-- Mapa -->
-            <div class="map-container" id="map"></div>
-
-            <!-- Botón para cambiar la visibilidad de la petición -->
-            <button class="btn btn-info" (click)="togglePetitionVisibility()">enviar petición</button>
-
-            <!-- Aquí usamos *ngIf para mostrar u ocultar el componente Petition -->
-            
-
-            <!-- Agregar botón para cerrar la expansión -->
-            <button class="btn btn-secondary" (click)="closePopup()">Cerrar</button>
-        </div>
-    </div>
+<div class="card" style="width: 18rem;">
+    <!-- Contenido de la tarjeta -->
+    <app-class-expansion *ngIf="isExpanded" [classData]="classData" (closePopupEvent)="closePopup()"></app-class-expansion>
 </div>

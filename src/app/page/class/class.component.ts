@@ -18,15 +18,6 @@ export class ClassComponent {
 
   // Inyecta el servicio en el constructor
   constructor(private classService: ClassService) { }
-
-  openClassFormDialog(): void {
-    this.showClassForm = true;
-  }
-
-  closeClassFormDialog(): void {
-    this.showClassForm = false;
-  }
-
   // Actualiza la lista de clases al ngOnInit
   ngOnInit() {
     this.classes = this.classService.getClasses();

@@ -7,7 +7,7 @@ export class Class {
     description: string;
     type: string;
     category: string;
-    location?: { latitude: number; longitude: number } | null;
+    location: { latitude: number; longitude: number } | null;
     direction: string;
     postalCode: string;
     province: string;

@@ -1,4 +1,3 @@
-// petition-list.component.ts
 import { Component, Input, OnInit } from '@angular/core';
 import { Petition } from '../../model/petition';
 import { PetitionService } from '../../service/petition.service';
@@ -15,7 +14,7 @@ import { ClassService } from '../../service/class.service';
 })
 export class PetitionListComponent implements OnInit {
     @Input() petitions: Petition[] = [];
-    classesMap: Map<number, string[]> = new Map();
+    classesMap: Map<number, Class> = new Map(); // Modificado para almacenar objetos de clase directamente
 
     constructor(private petitionService: PetitionService, private classService: ClassService) { }
 
@@ -24,23 +23,20 @@ export class PetitionListComponent implements OnInit {
     }
 
     private populateClassesMap(): void {
-        for (const petition of this.petitions) {
-            petition.classInfo = this.getClassInfo(petition.classId);
+        // Utiliza el servicio ClassService para obtener las clases correspondientes
+        const classIdsToFetch = Array.from(new Set(this.petitions.map(petition => petition.classId)));
+        for (const classId of classIdsToFetch) {
+            if (!this.classesMap.has(classId)) {
+                const classInstance = this.classService.getClassById(classId);
+                if (classInstance) {
+                    this.classesMap.set(classId, classInstance);
+                }
+            }
         }
     }
 
-    private getClassInfo(classId: number): string[] {
-        const classInfo: string[] = [];
-
-        const classInstance = this.classService.getClassById(classId);
-
-        if (classInstance) {
-            classInfo.push(classInstance.description);
-            classInfo.push(classInstance.type);
-            classInfo.push(classInstance.category);
-        }
-
-        return classInfo;
+    getClassInfo(classId: number): Class | undefined {
+        return this.classesMap.get(classId);
     }
 
     acceptPetition(petition: Petition): void {
@@ -57,5 +53,14 @@ export class PetitionListComponent implements OnInit {
         this.petitionService.updatePetition(petition).subscribe(() => {
             // Lógica adicional después de la actualización, si es necesario
         });
+    }
+
+    toggleExpand(petition: Petition): void {
+        petition.expanded = !petition.expanded;
+    }
+
+    truncatedMessage(message: string): string {
+        const maxLength = 40;
+        return message.length > maxLength ? message.substring(0, maxLength) + '...' : message;
     }
 }

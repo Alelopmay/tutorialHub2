@@ -7,6 +7,7 @@ export class Petition {
     userId: number;
     classId: number;
     classInfo: string[] = [];  // Información de la clase
+    expanded: boolean | undefined;
 
     constructor(
         id: number,

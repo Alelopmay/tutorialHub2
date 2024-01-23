@@ -68,6 +68,7 @@ hr {
   width: 90%;
 }
 
+
 @media screen and (max-width: 768px) {
   .expanded-content {
     flex-direction: column;

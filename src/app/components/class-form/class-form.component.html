@@ -28,27 +28,22 @@
                     <option value="lucha">Lucha libre</option>
                 </optgroup>
                 <optgroup label="Mixtas">
-                     <option value="mixtas">Clases Mixtas</option>
-                </optgroup>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="tipo">Tipo:</label>
-            <select class="form-control" id="type" name="type" [(ngModel)]="formData.type">
-                <optgroup label="Nivel">
-                    <option value="matematicas">Inicial</option>
-                    <option value="lengua">Básica</option>
-                    <option value="historia">medio superior</option>
-                    <option value="ciencias">superior</option>
-                    <option value="sociales">univerida</option>
-                </optgroup>
-                <optgroup label="Mixtas">
                     <option value="mixtas">Clases Mixtas</option>
                 </optgroup>
             </select>
         </div>
 
+    <div class="form-group">
+        <label for="tipo">Tipo:</label>
+        <select class="form-control" id="tipo" name="tipo" [(ngModel)]="formData.type">
+            <option value="inicial">Inicial</option>
+            <option value="basica">Básica</option>
+            <option value="medio-superior">Medio Superior</option>
+            <option value="superior">Superior</option>
+            <option value="universidad">Universidad</option>
+            <!-- Otras opciones según tus necesidades -->
+        </select>
+    </div>
         <div class="form-group">
             <label for="duracion">Duración:</label>
             <input type="number" class="form-control" id="duracion" name="duracion" [(ngModel)]="formData.duration">
